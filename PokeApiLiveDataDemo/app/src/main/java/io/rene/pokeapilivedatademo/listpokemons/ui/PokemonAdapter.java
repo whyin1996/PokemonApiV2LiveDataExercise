@@ -35,10 +35,9 @@ public class PokemonAdapter extends PagedListAdapter<Pokemon, RecyclerView.ViewH
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder h, int position) {
         PokemonViewHolder holder = (PokemonViewHolder)h;
-        if (getItem(position) == null){
-            return;
+        if (getItem(position) != null){
+            holder.bind(getItem(position));
         }
-        holder.bind(getItem(position));
     }
 
 }

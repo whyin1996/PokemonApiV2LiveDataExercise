@@ -24,9 +24,7 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder{
 
     @SuppressWarnings("UnusedReturnValue")
     public PokemonViewHolder bind(Pokemon pokemon) {
-        if (pokemon != null){
-            this.mPokemonNameField.setText(pokemon.getName());
-        }
+        this.mPokemonNameField.setText(pokemon.getName());
         return this;
     }
 
