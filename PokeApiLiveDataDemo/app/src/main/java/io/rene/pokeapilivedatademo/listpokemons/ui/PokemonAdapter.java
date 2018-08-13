@@ -16,12 +16,12 @@ public class PokemonAdapter extends PagedListAdapter<Pokemon, RecyclerView.ViewH
         super(new DiffUtil.ItemCallback<Pokemon>() {
             @Override
             public boolean areItemsTheSame(Pokemon oldItem, Pokemon newItem) {
-                return oldItem.getName() != null && newItem.getName() != null && oldItem.getName().equals(newItem.getName());
+                return oldItem.getName().equals(newItem.getName());
             }
 
             @Override
             public boolean areContentsTheSame(Pokemon oldItem, Pokemon newItem) {
-                return oldItem.getName() != null && newItem.getName() != null && oldItem.getName().equals(newItem.getName());
+                return oldItem == newItem;
             }
         });
     }

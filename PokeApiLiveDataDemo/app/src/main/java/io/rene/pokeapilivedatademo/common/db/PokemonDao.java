@@ -16,7 +16,7 @@ import io.rene.pokeapilivedatademo.common.models.Pokemon;
 @Dao
 public interface PokemonDao {
 
-    @Query("SELECT * FROM POKEMON")
+    @Query("SELECT * FROM POKEMON ORDER BY ID")
     DataSource.Factory<Integer, Pokemon> pokemons();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

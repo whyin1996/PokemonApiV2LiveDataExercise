@@ -13,6 +13,8 @@ public class PokemonCache {
     private PokemonDao mDao;
     private Executor mIOExecutor;
 
+    private static final Object LOCK = new Object();
+
     public interface InsertionCallback{
         void onInsertionCompleted();
     }
@@ -32,12 +34,14 @@ public class PokemonCache {
     }
 
 
-    public void insert(final List<Pokemon> pokemons, final InsertionCallback callback) {
+    public synchronized void insert(final List<Pokemon> pokemons, final InsertionCallback callback) {
         mIOExecutor.execute(new Runnable() {
             @Override
             public void run() {
-                mDao.insert(pokemons);
-                callback.onInsertionCompleted();
+                synchronized (LOCK){
+                    mDao.insert(pokemons);
+                    callback.onInsertionCompleted();
+                }
             }
         });
     }

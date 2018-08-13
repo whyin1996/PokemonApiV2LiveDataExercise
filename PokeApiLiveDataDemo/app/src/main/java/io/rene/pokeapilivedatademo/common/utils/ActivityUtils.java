@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.rene.pokeapilivedatademo.listpokemons.utils;
+package io.rene.pokeapilivedatademo.common.utils;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;

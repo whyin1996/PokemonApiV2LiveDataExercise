@@ -14,7 +14,7 @@ public class PokemonRepository {
     private PokemonV2Service service;
     private PokemonCache cache;
 
-    private static final int DATABASE_PAGE_SIZE = 10;
+    private static final int DATABASE_PAGE_SIZE = 20;
 
     public PokemonRepository(PokemonV2Service service, PokemonCache cache) {
         this.service = service;
